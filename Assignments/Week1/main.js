@@ -1,3 +1,5 @@
+// * *ARRAYS
+
 // let firstName = "aman";
 // let isMarried = true;
 // let age = 18;
@@ -14,8 +16,6 @@
 //   number++;
 // }
 // console.log(number);
-
-
 
 // TODO 1. Write a program prints all the even numbers in an array
 
@@ -75,3 +75,78 @@ for (let i = arr.length - 1; i >= 0; i--) {
   reversedArr.push(arr[i]);
 }
 console.log(reversedArr);
+
+// * * FUNCTIONS
+
+// * * CALLBACKS
+
+function sum(num1, num2) {
+  let result = num1 + num2;
+  return result;
+}
+function displayResult(data) {
+  console.log("Result of the sum is: " + data);
+}
+function displayResultPassive(data) {
+  console.log("Sum's result is: " + data);
+}
+
+const ans = sum(1, 6);
+displayResult(ans); // Result of the sum is: 7
+
+// ! You are only allowed to call one function after this
+// ! How will you displayResult of a sum
+
+function sum(num1, num2, fnTocall) {
+  let result = num1 + num2;
+  fnTocall(result);
+}
+function displayResult(data) {
+  console.log("Result of the sum is: " + data);
+}
+function displayResultPassive(data) {
+  console.log("Sum's result is: " + data);
+}
+
+const ans2 = sum(3, 9, displayResult);
+
+// Callbacks are functions passed as arguments to another function. They get executed inside the function where the callback is passed.
+// They get executed inside the outer function and can access variables from the outer function's scope.
+
+function calculateArithmetic(a, b, arthimaticTotalFunction) {
+  const ans = arthimaticTotalFunction(a, b);
+  return ans;
+
+  //   if (type == "sum") {
+  //     const value = sum(a, b);
+  //     return value;
+  //   }
+
+  //   if (type = "minus") {
+  //     const value = sub(a, b);
+  //     return value;
+  //   }
+}
+function sum(a, b) {
+  return a + b;
+}
+
+function sub(a, b) {
+  return a - b;
+}
+
+const Value = calculateArithmetic(1, 2, sub);
+console.log(`The arithmetic operation returned ${Value}`);
+
+
+
+// TODO 1. Write a function that finds the sum of the two numbers
+function findSum(a, b) {
+  // do something with the input and return an output.
+  return a + b;
+}
+
+const value = findSum(6, 5);
+console.log(value);
+
+// TODO 2. Write another function that displays this reslult in a pretty format.
