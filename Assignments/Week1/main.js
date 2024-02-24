@@ -76,7 +76,21 @@ for (let i = arr.length - 1; i >= 0; i--) {
 }
 console.log(reversedArr);
 
+
+
+
+
+
 // * * FUNCTIONS
+
+// TODO 1. Write a function that finds the sum of the two numbers
+function findSum(a, b) {
+  // do something with the input and return an output.
+  return a + b;
+}
+
+const value = findSum(6, 5);
+console.log(value);
 
 // * * CALLBACKS
 
@@ -93,6 +107,8 @@ function displayResultPassive(data) {
 
 const ans = sum(1, 6);
 displayResult(ans); // Result of the sum is: 7
+
+// TODO 2. Write another function that displays this result in a pretty format.
 
 // ! You are only allowed to call one function after this
 // ! How will you displayResult of a sum
@@ -112,6 +128,8 @@ const ans2 = sum(3, 9, displayResult);
 
 // Callbacks are functions passed as arguments to another function. They get executed inside the function where the callback is passed.
 // They get executed inside the outer function and can access variables from the outer function's scope.
+
+// TODO 3. Write another function that takes this sum and prints it in passive tense
 
 function calculateArithmetic(a, b, arthimaticTotalFunction) {
   const ans = arthimaticTotalFunction(a, b);
@@ -135,18 +153,19 @@ function sub(a, b) {
   return a - b;
 }
 
-const Value = calculateArithmetic(1, 2, sub);
+const Value = calculateArithmetic(1, 2, sum);
 console.log(`The arithmetic operation returned ${Value}`);
 
+//  * * CALLBACK Example through setTimeout
 
-
-// TODO 1. Write a function that finds the sum of the two numbers
-function findSum(a, b) {
-  // do something with the input and return an output.
-  return a + b;
+function greet() {
+  console.log("Hello!");
 }
 
-const value = findSum(6, 5);
-console.log(value);
+setTimeout(greet, 3000); // passing a function as an argument
 
-// TODO 2. Write another function that displays this reslult in a pretty format.
+// For today -
+// 1. Create a counter in Javascript (counts down from 30 to 0)
+// 2. Calculate the time it takes between a set Timeout call and the inner function actually running
+// 3. Create a terminal clock (HH:MM:SS)
+
